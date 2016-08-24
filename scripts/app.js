@@ -23,7 +23,8 @@ $(document).on("ready", function(){
 //if the ajax function is successful, display 25 images at a time
 	function onSuccess(json) {
 		for (var i=0; i<=json.data.length; i++){
-		 $(".gif-gallery").append($("<img src='json.data[i].images.fixed_width.url'>"));
+			console.log("+json.data[0].images.original.url+");
+		 $(".gif-gallery").append($("<img src="+json.data[i].images.original.url+">"));
 		 $("img").append($("<input type='submit' value='See More!' class='see-more-btn'>"));
 		}
 	}
